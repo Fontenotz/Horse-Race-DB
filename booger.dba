@@ -1,0 +1,59 @@
+load image "kfc.jpg",1
+
+y=0
+a=0
+b=0
+c=0
+d=0
+e=0
+f=0
+win=0
+do
+sprite 1,a,y,1
+sprite 2,b,y+75,1
+sprite 3,c,y+150,1
+sprite 4,d,y+255,1
+sprite 5,e,y+300,1
+sprite 6,f,y+375,1
+result=movehorses()
+
+if result=1
+a=a+10
+if a>=600 then win=1
+endif
+
+if result=2
+b=b+10
+if b>=600 then win=2
+endif
+
+if result=3
+c=c+10
+if c>=600 then win=3
+endif
+
+if result=4
+d=d+10
+if d>=600 then win=4
+endif
+
+if result=5
+e=e+10
+if e>=600 then win=5
+endif
+
+if result=6
+f=f+10
+if f>=600 then win=6
+endif
+
+wait 1
+if win<>0 then exit
+loop
+print "the winna is bucket";win
+
+end
+
+function movehorses()
+horse=rnd(5)+1
+endfunction horse
